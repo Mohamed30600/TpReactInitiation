@@ -1,10 +1,11 @@
 import React from 'react';
 import {format} from 'date-fns'
+import fr from 'date-fns/locale/fr';
 
 const TroisiemeNoeud = () => {
     return (
         <div>
-            {format ( new Date(), 'do MMMM Y HH:mm:ss')}
+            {format ( new Date(), 'd MMMM Y HH:mm:ss',{locale:fr})}
         </div>
     );
 };
