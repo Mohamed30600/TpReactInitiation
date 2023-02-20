@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
 import PremierNoeud from './components/PremierNoeud';
 import SecondNoeud from './components/SecondNoeud';
 import TroisiemeNoeud from './components/TroisiemeNoeud';
@@ -7,9 +6,15 @@ import TroisiemeNoeud from './components/TroisiemeNoeud';
 function App() {
   return (
     <div>
-      <PremierNoeud/>
-      <SecondNoeud/>
-      <TroisiemeNoeud/>
+      <div  className='Digi-header'>
+      <PremierNoeud />
+      </div>
+      <div className='Digi-main'>
+      <SecondNoeud />
+      </div>
+      <div className='Digi-footer'>
+      <TroisiemeNoeud />
+      </div>
       
     </div>
   );
