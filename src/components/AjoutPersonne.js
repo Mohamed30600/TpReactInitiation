@@ -14,7 +14,7 @@ class AjoutPersonne extends Component {
             this.props.listeDeContacts.push(this.state.contact)
         }
         */
-    console.log(this.state.personne);
+    //console.log(this.state.personne);
     if (this.props.ajout) {
       this.props.ajout({ ...this.state.personne });
       //callback avec copie pour éviter le passage de la même ref

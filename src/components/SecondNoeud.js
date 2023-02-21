@@ -6,20 +6,24 @@ import ModifPersonne from "./ModifPersonne";
 class SecondNoeud extends Component {
   constructor() {
     super();
-    this.dataPersonne = [...dataPersonne];
+    this.dataPersonne = dataPersonne;
     this.state = { dataPersonne: this.dataPersonne };
   }
 
   ajoutPersonne = (personne) => {
-    this.dataPersonne.push(personne);
-    this.setState({ dataPersonne: this.dataPersonne });
+    this.state.dataPersonne.push(personne);
+   
+    this.setState({ dataPersonne: this.state.dataPersonne });
   };
 
   supPersonne = (id) => {
-    this.dataPersonne.filter((per) =>console.log(per.id !=id) );
-    this.setState({dataPersonne:this.dataPersonne})
+    
+      this.setState({ dataPersonne: this.state.dataPersonne.filter((per) => per.id !==id) });
   };
 
+  modifPersonne =()=>{
+    
+  }
 
   listePersonne = () =>
   
@@ -32,7 +36,8 @@ class SecondNoeud extends Component {
         <td>{per.CodePostal}</td>
         <td>{per.age}</td>
         <td>
-         <button className="btn btn-danger" onClick={this.supPersonne}>suprimer</button>
+         <button className="btn btn-danger" onClick={()=>this.supPersonne(per.id)}>suprimer</button>
+         <button className="btn btn-primary" onClick={()=>this.modifPersonne(per.id)}>modification</button>
           
             
            </td>
@@ -41,10 +46,10 @@ class SecondNoeud extends Component {
     )
     
     );
-
-  render() {
-    return (
-      <>
+    render() {
+      return (
+        <>
+        {console.log("state",this.state)}
         <table className="table">
           <thead>
             <tr>
