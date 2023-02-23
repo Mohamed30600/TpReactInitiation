@@ -3,6 +3,7 @@ import PremierNoeud from './components/PremierNoeud';
 import SecondNoeud from './components/SecondNoeud';
 import TroisiemeNoeud from './components/TroisiemeNoeud'
 import ListPersonn from './components/ListPersonn';
+import Navigaion from './components/Navigaion';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       <TroisiemeNoeud />
       </div> */}
         <h1 className=''>Crud react avec condition formulaire</h1>
-    <ListPersonn/>
+    <Navigaion/>
      
       
     </div>
