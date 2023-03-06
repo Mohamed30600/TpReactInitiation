@@ -1,17 +1,20 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import AjouterpersonneRoute from "./AjouterpersonneRoute";
 
 export default function ListPersonn() {
   const [personne, setPersonne] = useState([]);
   const [listepersonne, setListepersonne] = useState([]);
 
-  
+  const navigate =useNavigate()
 
   const afficheListe = () => {
     axios
       .get("http://localhost:3000/list")
-      .then((reponse) => setPersonne(reponse.data));
+      .then((reponse) => setPersonne(reponse.data)
+      .then(()=>navigate("/")));
   };
 
   useEffect(() => {
@@ -23,10 +26,14 @@ export default function ListPersonn() {
     .then((res)=>afficheListe())
   };
  
-  const updatePers =( id) => {
-    axios.put(`http://localhost:3000/list/${id}`)
-    .then((res)=>console.log())
-  }
+  // const updatePers =(personne) => {
+  //   axios.put(`http://localhost:3000/list/${personne.id}`,
+
+  //   personne.id !== 
+
+  //   )
+  //   .then((res)=>console.log())
+  // }
   return (
     <div>
       <table className="table">
@@ -63,11 +70,13 @@ export default function ListPersonn() {
                 <button
                   className="btn btn-success"
                   onClick={() => {
-                    updatePers(valeur.id);
+                    navigate(('/modifierPersonne'),{state:valeur})
+                   ;
                   }}
                 >
-                  delete
+                  modif
                 </button>
+                
               </td>
             </tr>
           ))}

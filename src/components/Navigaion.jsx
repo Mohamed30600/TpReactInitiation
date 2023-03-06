@@ -24,13 +24,18 @@ const Navigaion = () => {
                  <Link to ="/ajouterPersonne"> Ajouter Personne</Link>
               
               </li>
-              
+              <li className="nav-item">
+                
+                <Link to="/modifierPersonne">Modifier Personne</Link> 
+                
+              </li>
             </ul>
           </div>
         </nav>
         <Routes>
             <Route path="/" exact element={<ListPersonn/>}/>
             <Route path="/ajouterPersonne"  element={<AjouterpersonneRoute/>}/>
+            <Route path="/modifierPersonne/"  element={<ModifierPersonne/>}/>
         </Routes>
       </div>
     </BrowserRouter>
